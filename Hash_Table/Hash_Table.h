@@ -30,13 +30,13 @@ public:
 	Hash_Table(const Hash_Table&);
 
 	/*Move-constructor*/
-	Hash_Table(Hash_Table&& other) noexcept;
+	Hash_Table(Hash_Table&& other);
 
 	/*Assignment operator*/
 	Hash_Table& operator=(const Hash_Table& HT);
 
 	/*Move assignment operator*/
-	Hash_Table& operator=(Hash_Table&& other) noexcept;
+	Hash_Table& operator=(Hash_Table&& other);
 
 	/*Insert operator*/
 	Hash_Table& operator<<(std::string str);

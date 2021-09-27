@@ -1,26 +1,37 @@
 #include "Hash_Table.h"
-// обработка исключений
 
 int main()
 {
-	int N = 10;
-	Hash_Table a(N);
-	a.Push("ABC");
-	a.Push("VVV");
-	a << "BCA";
-	a.Push("XVV");
-	a.Push("BCA");
-	a.Push("HJ");
-	a.Push("JH");
-	a.PrintList();
+	int N;
+	std::cout << "Enter container size:" << std::endl;
+	std::cin >> N;
+
+	Hash_Table table1(N);
+	table1.Push("ABC");
+	table1.Push("DEF");
+	table1 << "ABCDEF";
+	table1 << "BAC";
+
+	std::string value;
+	std::cout << "Enter some string:" << std::endl;
+	std::cin >> value;
+	table1 << value;
 	std::cout << std::endl;
-	a.Pop("ABC");
-	a.Pop("VVV");
-	a.Pop("XVV");
-	a.PrintList();
+	std::cout  << "Take this hash table, bro" << std::endl;
+	table1.PrintList();
 	std::cout << std::endl;
-	Hash_Table a2(N);
-	a2 = a;
-	a2.PrintList();
+
+	Hash_Table table2(N);
+	table2 = table1;
+	std::cout << "Enter value to delete from table:" << std::endl;
+	std::cin >> value;
+	std::cout << std::endl;
+	table1.Pop(value);
+	std::cout << "First hash table:" << std::endl;
+	table1.PrintList();
+	std::cout << std::endl;
+	std::cout << "Second hash table:" << std::endl;
+	table2.PrintList();
+
 	return 0;
 }
