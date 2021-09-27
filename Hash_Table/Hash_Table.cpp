@@ -92,6 +92,16 @@ Hash_Table& Hash_Table::operator<<(std::string str)
 	return *this;
 }
 
+
+std::istream& operator>>(std::istream& in, Hash_Table& other)
+{
+	std::string str;
+	std::cin >> str;
+	int tmp = (int)other.hash(str, other.N);
+	other.nodes[tmp].value.push_back(str);
+	return in;
+};
+
 void Hash_Table::Push(std::string str)
 {
 	int tmp = (int)hash(str, N);

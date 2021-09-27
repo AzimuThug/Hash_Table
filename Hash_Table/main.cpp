@@ -17,7 +17,13 @@ int main()
 	std::cin >> value;
 	table1 << value;
 	std::cout << std::endl;
-	std::cout  << "Take this hash table, bro" << std::endl;
+	std::cout  << "Take this hash table, bro:" << std::endl;
+	table1.PrintList();
+	std::cout << std::endl;
+
+	std::cout << "Enter some string to test input srteam:" << std::endl;
+	std::cin >> table1;
+	std::cout << "Look, it works!:" << std::endl;
 	table1.PrintList();
 	std::cout << std::endl;
 

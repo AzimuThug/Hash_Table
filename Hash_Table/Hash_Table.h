@@ -38,6 +38,9 @@ public:
 	/*Move assignment operator*/
 	Hash_Table& operator=(Hash_Table&& other);
 
+	/*Data stream operator*/
+	friend std::istream& operator>>(std::istream& in, Hash_Table& t);
+
 	/*Insert operator*/
 	Hash_Table& operator<<(std::string str);
 
