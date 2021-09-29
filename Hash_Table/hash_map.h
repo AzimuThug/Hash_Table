@@ -13,8 +13,7 @@ public:
 		Node(const std::string& str) :
 			val_(str),
 			next_(nullptr)
-		{
-		}
+		{}
 		void set_next(Node* ptr)
 		{
 			next_ = std::unique_ptr<Node>(ptr);
