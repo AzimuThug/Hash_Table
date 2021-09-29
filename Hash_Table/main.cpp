@@ -1,43 +1,22 @@
-#include "Hash_Table.h"
-
+#include "hash_map.h"
 int main()
 {
-	int N;
-	std::cout << "Enter container size:" << std::endl;
-	std::cin >> N;
-
-	Hash_Table table1(N);
-	table1.Push("ABC");
-	table1.Push("DEF");
-	table1 << "ABCDEF";
-	table1 << "BAC";
-
-	std::string value;
-	std::cout << "Enter some string:" << std::endl;
-	std::cin >> value;
-	table1 << value;
+	HashMap<10> a1;
+	std::cin >> a1;
+	std::cin >> a1;
+	std::cin >> a1;
+	std::cin >> a1;
+	std::cout << a1;
+	HashMap<10> a2 = a1;
 	std::cout << std::endl;
-	std::cout  << "Take this hash table, bro:" << std::endl;
-	table1.PrintList();
+	std::cin >> a2;
+	std::cout << a2;
+	HashMap<10> a3(a1);
 	std::cout << std::endl;
-
-	std::cout << "Enter some string to test input srteam:" << std::endl;
-	std::cin >> table1;
-	std::cout << "Look, it works!:" << std::endl;
-	table1.PrintList();
+	std::cin >> a3;
+	std::cout << a3;
 	std::cout << std::endl;
-
-	Hash_Table table2(N);
-	table2 = table1;
-	std::cout << "Enter value to delete from table:" << std::endl;
-	std::cin >> value;
-	std::cout << std::endl;
-	table1.Pop(value);
-	std::cout << "First hash table:" << std::endl;
-	table1.PrintList();
-	std::cout << std::endl;
-	std::cout << "Second hash table:" << std::endl;
-	table2.PrintList();
-
+	HashMap<10> a4(std::move(a3));
+	std::cout << a4;
 	return 0;
 }
