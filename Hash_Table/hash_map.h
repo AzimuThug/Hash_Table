@@ -29,7 +29,7 @@ public:
 	};
 private:
 	size_t size_ = 0;
-	std::unique_ptr<Node> head_;
+	std::shared_ptr<Node> head_;
 public:
 	void push(const std::string& str)
 	{
